@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Add Student Marks</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <table>
+                 <tr>
+                    <td>Student Name</td>
+                    <td>
+                        <h:selectOneMenu label ="Student Name" value="#{addStudentMarks.studentName}" >
+                            <f:selectItem itemLabel="Suganthan" itemValue="Suganthan" />
+                            <f:selectItem itemLabel="Sathees" itemValue="Sathees" />
+                            <f:selectItem itemLabel="Sujeewan" itemValue="Sujeewan" />
+                            <f:selectItem itemLabel="Sujewan" itemValue="Sujewan" />
+                        </h:selectOneMenu>
+                    </td>
+                </tr>
+               <tr>
+                    <td>Grade</td>
+                    <td>
+                        <h:selectOneMenu label="Grade" value="#{addStudentMarks.grade}" >
+                            <f:selectItem itemLabel="01" itemValue="01" />
+                            <f:selectItem itemLabel="02" itemValue="02" />
+                            <f:selectItem itemLabel="03" itemValue="03" />
+                            <f:selectItem itemLabel="04" itemValue="04" />
+                        </h:selectOneMenu>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Subject</td>
+                    <td>
+                        <h:inputTextarea label="Subject" id="subject" value="#{addStudentMarks.subject}" required="true" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Marks</td>
+                    <td> 
+                        <h:inputText label="Marks" id ="marks" value ="#{addStudentMarks.marks}" required="true" >
+                            
+                            <f:validateLongRange minimum="0" maximum="100" />
+                        </h:inputText>
+                            
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        
+                        <h:commandButton value="Enter" action="#{addStudentMarks.passResult()}"/>
+                    </td>
+                </tr>
+            </table>
+            <font color="red">
+                <h:messages />
+            </font>
+            
+        </h:form>       
+        
+    </h:body>
+</html>
+
